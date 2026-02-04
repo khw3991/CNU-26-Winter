@@ -7,7 +7,6 @@ class Item(BaseModel):
     data: str
     rating: float
 
-
 items = [
     Item(id=1, data='apple', rating=3),
     Item(id=2, data='banana', rating=3),
@@ -74,4 +73,5 @@ def patch_item(payload:ItemPatch, item_id:int):
                 item.rating=payload.rating
             return item
     raise HTTPException(status_code=404, detail='Item not found')
+
 

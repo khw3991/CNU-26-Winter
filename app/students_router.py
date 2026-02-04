@@ -15,7 +15,6 @@ students = [
 
 Students_router=APIRouter(prefix='/students', tags=["students"])
 
-
 class stuCreate(BaseModel):
     id : int
     name : str
@@ -74,5 +73,6 @@ def patch_item(payload:stuPatch, stu_id:int):
                 student.major=payload.major
             return student
     raise HTTPException(status_code=404, detail='Student not found')
+
 
 
